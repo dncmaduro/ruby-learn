@@ -1,0 +1,13 @@
+<h1>Details</h1>
+
+<% if @article !=nil %>
+    <div>
+        <p><b>Title: </b>
+            <%= @article.title%>
+                <b>Body: </b>
+                <%= @article.body%>
+                    <b>Author: </b>
+                    <%= @article.author%>
+        </p>
+    </div>
+    <% end %>
