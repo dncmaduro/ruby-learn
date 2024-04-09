@@ -15,3 +15,21 @@
             %>
     </li>
     <% end %>
+
+        <h2>Add a comment:</h2>
+
+        <%= render "comment" , comment: @comment %>
+
+            <h2>Comments</h2>
+
+            <% @article.comments.each do |comment| %>
+                <% unless comment.archived? %>
+                    <div>
+                        <p><b>Commenter: </b>
+                            <%= comment.commenter%>
+                                <b>Body: </b>
+                                <%= comment.body%>
+                        </p>
+                    </div>
+                    <% end %>
+                        <% end %>

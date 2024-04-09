@@ -1,19 +1,25 @@
 <h1>Articles</h1>
 
 <% if @articles !=nil %>
-    <% @articles.each do |article| %>
-        <div>
-            <p><b>Title: </b>
-                <%= article.title%>
-                    <b>Body: </b>
-                    <%= article.body%>
-                        <b>Author: </b>
-                        <%= article.author%>
-            </p>
-        </div>
-        <% end %>
-            <% end %>
+    <p>Quantity:
+        <%= Article.public_count %>
+    </p>
 
-                <% if @articles==nil %>
-                    <p>haha</p>
+    <% @articles.each do |article| %>
+        <% unless article.archived? %>
+            <div>
+                <p>
+                    <b>Title: </b>
+                    <%= article.title%>
+                        <b>Body: </b>
+                        <%= article.body%>
+                            <b>Author: </b>
+                            <%= article.author%>
+                </p>
+            </div>
+            <% end %>
+                <% end %>
                     <% end %>
+                        <% if @articles==nil %>
+                            <p>haha</p>
+                            <% end %>
