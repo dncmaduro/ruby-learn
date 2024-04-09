@@ -31,5 +31,9 @@
                                 <%= comment.body%>
                         </p>
                     </div>
+                    <button>
+                        <%= link_to "Delete Comment" , [comment.article, comment], data: { turbo_method: :delete,
+                            turbo_confirm: "Are you sure?" } %>
+                    </button>
                     <% end %>
                         <% end %>
